@@ -1,89 +1,81 @@
 package com.xperiencelabs.arapp
 
-import android.content.Context
-import android.graphics.BitmapFactory
 import android.media.MediaPlayer
-import android.net.Uri
-import android.opengl.Visibility
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isGone
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.google.ar.core.Config
 import io.github.sceneview.ar.ArSceneView
 import io.github.sceneview.ar.node.ArModelNode
-import io.github.sceneview.ar.node.AugmentedImageNode
-import io.github.sceneview.ar.node.PlacementMode
-import io.github.sceneview.material.setExternalTexture
 import io.github.sceneview.math.Position
-import io.github.sceneview.math.Rotation
-import io.github.sceneview.node.VideoNode
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var sceneView: ArSceneView
     lateinit var placeButton: ExtendedFloatingActionButton
-    private lateinit var modelNode: ArModelNode
-    private lateinit var videoNode: VideoNode
-    private lateinit var mediaPlayer:MediaPlayer
-
+    private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        sceneView = findViewById<ArSceneView?>(R.id.sceneView).apply {
+        // Inicialización del ArSceneView y configuración de la estimación de luz
+        sceneView = findViewById<ArSceneView>(R.id.sceneView).apply {
             this.lightEstimationMode = Config.LightEstimationMode.DISABLED
         }
 
-        mediaPlayer = MediaPlayer.create(this,R.raw.ad)
+        // Inicialización del MediaPlayer con un archivo de audio
+        mediaPlayer = MediaPlayer.create(this, R.raw.ad)
 
+        // Configuración del botón de colocar modelo
         placeButton = findViewById(R.id.place)
 
+        // Configuración del evento de clic en el botón para colocar modelos
         placeButton.setOnClickListener {
-            placeModel()
+            placeModels()
         }
-
-        videoNode = VideoNode(sceneView.engine, scaleToUnits = 0.7f, centerOrigin = Position(y=-4f), glbFileLocation = "models/plane.glb", player = mediaPlayer, onLoaded = {_,_ ->
-            mediaPlayer.start()
-        })
-
-        modelNode = ArModelNode(sceneView.engine,PlacementMode.INSTANT).apply {
-            loadModelGlbAsync(
-                glbFileLocation = "models/sofa.glb",
-                scaleToUnits = 1f,
-                centerOrigin = Position(-0.5f)
-
-            )
-            {
-                sceneView.planeRenderer.isVisible = true
-                val materialInstance = it.materialInstances[0]
-            }
-            onAnchorChanged = {
-                placeButton.isGone = it != null
-            }
-
-        }
-        sceneView.addChild(modelNode)
-        modelNode.addChild(videoNode)
-
     }
 
-   private fun placeModel(){
-       modelNode.anchor()
+    // Función para colocar tres modelos 3D diferentes en la escena
+    private fun placeModels() {
+        sceneView.planeRenderer.isVisible = false
 
-       sceneView.planeRenderer.isVisible = false
+        // Lista de modelos con sus respectivas ubicaciones y archivos GLB
+        val models = listOf(
+            Pair("models/mamut.glb", Position(0f, 0f, 0f)),          // Mamut en el centro
+            Pair("models/dragon_car.glb", Position(-0.5f, 0f, -0.5f)), // Dragon Car a la izquierda
+            Pair("models/angel_dragon.glb", Position(0.5f, 0f, -0.5f)) // Angel Dragon a la derecha
+        )
 
-   }
+        // Crear y añadir cada modelo a la escena
+        models.forEach { (glbFileLocation, position) ->
+            val modelNode = ArModelNode(sceneView.engine).apply {
+                loadModelGlbAsync(
+                    glbFileLocation = glbFileLocation,
+                    scaleToUnits = 1f,
+                    centerOrigin = position
+                )
+                onAnchorChanged = {
+                    // Ocultar el botón cuando el modelo está anclado
+                    placeButton.isGone = it != null
+                }
+            }
+            // Agregar el nuevo nodo modelo a la escena
+            sceneView.addChild(modelNode)
+            modelNode.anchor()
+        }
+    }
 
+    // Detener la reproducción de audio cuando la actividad está en pausa
     override fun onPause() {
         super.onPause()
         mediaPlayer.stop()
     }
+
+    // Liberar recursos del MediaPlayer cuando la actividad se destruye
     override fun onDestroy() {
         super.onDestroy()
         mediaPlayer.release()
     }
-
 }
