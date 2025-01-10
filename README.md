@@ -19,6 +19,7 @@ Esta es una aplicación de realidad aumentada (AR) para Android que permite a lo
 ## 👥 Equipo de desarrollo
 ## Miembros 
 - Erick Caiza
+- Eduardo Caza
 - Francisco Caero
 - Yuverly Verdezoto
 - Luis Guaygua
