@@ -13,3 +13,12 @@ Esta es una aplicación de realidad aumentada (AR) para Android que permite a lo
 - **Archivos de recursos**:
 - Archivo.glb
 
+## Miembros 
+- Erick Caiza
+- Francisco Caero
+- 
+- Yuverñy Verdezoto
+- Luis Guaygua
+- Mateo Garzon
+- Luis Guaygua
+- Alex Villaroel  
