@@ -17,9 +17,12 @@ Esta es una aplicación de realidad aumentada (AR) para Android que permite a lo
   - Archivo `.glb` para los modelos 3D.
 
 ## 👥 Equipo de desarrollo
-- 👨‍💻 **[Nombre del integrante 1]**
-- 👩‍💻 **[Nombre del integrante 2]**
-- 👨‍💻 **[Nombre del integrante 3]**
-- 👩‍💻 **[Nombre del integrante 4]**
-
+## Miembros 
+- Erick Caiza
+- Francisco Caero
+- Yuverly Verdezoto
+- Luis Guaygua
+- Mateo Garzon
+- Luis Guaygua
+- Alex Villaroel  
 ¡Gracias por utilizar nuestra aplicación! 💡 Si tienes preguntas o sugerencias, no dudes en contactarnos. 📩
