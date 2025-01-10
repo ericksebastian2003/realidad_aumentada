@@ -24,5 +24,5 @@ Esta es una aplicación de realidad aumentada (AR) para Android que permite a lo
 - Luis Guaygua
 - Mateo Garzon
 - Luis Guaygua
-- Alex Villaroel  
+- Erick Villaroel  
 ¡Gracias por utilizar nuestra aplicación! 💡 Si tienes preguntas o sugerencias, no dudes en contactarnos. 📩
