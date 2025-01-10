@@ -16,8 +16,7 @@ Esta es una aplicación de realidad aumentada (AR) para Android que permite a lo
 ## Miembros 
 - Erick Caiza
 - Francisco Caero
-- 
-- Yuverñy Verdezoto
+- Yuverly Verdezoto
 - Luis Guaygua
 - Mateo Garzon
 - Luis Guaygua
