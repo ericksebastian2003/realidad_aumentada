@@ -1,23 +1,25 @@
-# Aplicación de Realidad Aumentada
+# 📱 Aplicación de Realidad Aumentada
 
-Esta es una aplicación de realidad aumentada (AR) para Android que permite a los usuarios colocar modelos 3D
+Esta es una aplicación de realidad aumentada (AR) para Android que permite a los usuarios colocar modelos 3D en su entorno utilizando la tecnología ARCore. ✨
 
-## Funcionalidades
-- Colocar un modelos 3D al dar click en Place
-- ![WhatsApp Image 2025-01-10 at 3 37 15 PM](https://github.com/user-attachments/assets/5283a205-d3a0-462c-a769-4de342e27dcc)
--  ![WhatsApp Image 2025-01-10 at 3 37 14 PM](https://github.com/user-attachments/assets/5e422eda-ff68-40cf-bac8-6e13adb765c5)
+## 🚀 Funcionalidades
+- 🌟 **Colocar modelos 3D**: Con solo hacer clic en el botón `Place`, puedes insertar modelos 3D en tu espacio real.
+- 🛠️ **Interacción en tiempo real**: Explora cómo los objetos 3D se integran con el mundo real.
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5283a205-d3a0-462c-a769-4de342e27dcc" alt="Captura 1" width="45%">
+  <img src="https://github.com/user-attachments/assets/5e422eda-ff68-40cf-bac8-6e13adb765c5" alt="Captura 2" width="45%">
+</div>
 
-## Requisitos.
+## 📋 Requisitos
 - **Dispositivo Android**: Compatible con ARCore.
 - **Archivos de recursos**:
-- Archivo.glb
+  - Archivo `.glb` para los modelos 3D.
 
-## Miembros 
-- Erick Caiza
-- Francisco Caero
-- Yuverly Verdezoto
-- Luis Guaygua
-- Mateo Garzon
-- Luis Guaygua
-- Alex Villaroel  
+## 👥 Equipo de desarrollo
+- 👨‍💻 **[Nombre del integrante 1]**
+- 👩‍💻 **[Nombre del integrante 2]**
+- 👨‍💻 **[Nombre del integrante 3]**
+- 👩‍💻 **[Nombre del integrante 4]**
+
+¡Gracias por utilizar nuestra aplicación! 💡 Si tienes preguntas o sugerencias, no dudes en contactarnos. 📩
